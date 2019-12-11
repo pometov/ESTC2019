@@ -153,14 +153,14 @@
 
 /************************* PLL Parameters *************************************/
 /* PLL_VCO = (HSE_VALUE or HSI_VALUE / PLL_M) * PLL_N */
-#define PLL_M      25
-#define PLL_N      288
+#define PLL_M      8
+#define PLL_N      336
 
 /* SYSCLK = PLL_VCO / PLL_P */
 #define PLL_P      2
 
 /* USB OTG FS, SDIO and RNG Clock =  PLL_VCO / PLLQ */
-#define PLL_Q      6
+#define PLL_Q      7
 
 /******************************************************************************/
 
@@ -386,15 +386,15 @@ static void SetSysClock(void)
     RCC->CFGR |= RCC_CFGR_PPRE2_DIV2;
 
     /* PCLK1 = HCLK / 4*/
-    RCC->CFGR |= RCC_CFGR_PPRE1_DIV4;
+    RCC->CFGR |= RCC_CFGR_PPRE1_DIV8;
 #endif /* STM32F40_41xxx || STM32F42_43xxx */
 
 #if defined (STM32F401xx)
     /* PCLK2 = HCLK / 2*/
-    RCC->CFGR |= RCC_CFGR_PPRE2_DIV1;
+    RCC->CFGR |= RCC_CFGR_PPRE2_DIV2;
 
     /* PCLK1 = HCLK / 4*/
-    RCC->CFGR |= RCC_CFGR_PPRE1_DIV2;
+    RCC->CFGR |= RCC_CFGR_PPRE1_DIV8;
 #endif /* STM32F401xx */
 
     /* Configure the main PLL */

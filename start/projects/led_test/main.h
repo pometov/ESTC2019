@@ -12,6 +12,15 @@
 /* #else */
 /*  #error "Please select first the Evaluation board used in your application (in Project Options)" */
 /* #endif */
+void timer_ini(void);
+void TIM2_IRQHandler(void);
+void led_board(void);
+void init_gpio(void);
+void tim_init(void);
+void init_it(void);
+void EXTI0_IRQHandler(void);
+void pwm_power(void);
+void gpio_ini(void);
 
 #include <math.h>
 
