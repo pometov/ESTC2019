@@ -84,39 +84,6 @@ int main(void)
 
 	while (1) 
 	{
-
-	if (TIM_GetCount(TIM2) == 999)  // смена цветов диодов основной платы по таймеру без использывания прерывания
-	{
-	count++;
-	if (count >= 4)
-		count = 0;
-	}
- 	switch (count)
-	{
-	case 0:
-	{
-		GPIO_ResetBits(GPIOD, GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15);
-     		GPIO_SetBits(GPIOD, GPIO_Pin_12 );
-		break;
-	}
-	case 1:
-	{
-		GPIO_ResetBits(GPIOD, GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15);
-     		GPIO_SetBits(GPIOD, GPIO_Pin_13 );
-		break;
-	}	
-	case 2:
-	{
-		GPIO_ResetBits(GPIOD, GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15);
-     		GPIO_SetBits(GPIOD, GPIO_Pin_14 );
-		break;
-	}	
-	case 3:
-	{
-		GPIO_ResetBits(GPIOD, GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15);
-     		GPIO_SetBits(GPIOD, GPIO_Pin_15 );
-		break;
-	}
 	
 	}
 }
