@@ -235,15 +235,15 @@ bool press_button(Ports port)
 	uint16_t c = TIM_GetCount(TIM2);
 	if (port == PE0)
 	{
-	if (GPIO_ReadInputDataBit(GPIOE, GPIO_Pin_0) == 0)
-	return 1;
-	else return 0;
+		if (GPIO_ReadInputDataBit(GPIOE, GPIO_Pin_0) == 0)
+			return 1;
+		else return 0;
 	}
 	if (port == PE1)
 	{
-	if (GPIO_ReadInputDataBit(GPIOE, GPIO_Pin_1) == 0)
-	return 1;
-	else return 0;
+		if (GPIO_ReadInputDataBit(GPIOE, GPIO_Pin_1) == 0)
+			return 1;
+		else return 0;
 	}
 }
 
